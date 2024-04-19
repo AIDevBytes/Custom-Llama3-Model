@@ -1,0 +1,21 @@
+# set the base model 
+FROM llama3:8b
+
+# Set custom paramter values
+PARAMETER temperature 1
+
+PARAMETER stop <|start_header_id|>
+PARAMETER stop <|end_header_id|>
+PARAMETER stop <|eot_id|>
+PARAMETER stop <|reserved_special_token
+
+# Set the model template
+TEMPLATE """
+{{ if .System }}<|start_header_id|>system<|end_header_id|>
+{{ .System }}<|eot_id|>{{ end }}{{ if .Prompt }}<|start_header_id|>user<|end_header_id|>
+{{ .Prompt }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+{{ .Response }}<|eot_id|>
+"""
+
+# Set the system message
+SYSTEM You are a helpful AI assistant named Llama3 Droid
