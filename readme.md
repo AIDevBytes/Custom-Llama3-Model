@@ -4,6 +4,8 @@ This repo is a companion to the YouTube video titled: <a href="https://youtu.be/
 
 [Ollama ModelFile Docs](https://github.com/ollama/ollama/blob/main/docs/modelfile.md)  
 
+[Llama 3 model can be found here](https://ollama.com/library/llama3)
+
 ### Ollama Commands
 
 #### Start Ollama Server
